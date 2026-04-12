@@ -6,28 +6,42 @@
       <ul class="nav-list">
 
         {% for link in section.settings.menu.links %}
+        {% if link.title != blank %}
         <li class="nav-item {% if link.links != blank %}has-dropdown{% endif %}">
-          
+
+          <!-- Main Menu -->
           <a href="{{ link.url }}">{{ link.title }}</a>
 
+          <!-- Dropdown -->
           {% if link.links != blank %}
           <div class="dropdown-menu">
             <div class="dropdown-container">
 
               {% for child in link.links %}
+              {% if child.title != blank or child.links != blank %}
               <div class="dropdown-column">
-                <h4>{{ child.title }}</h4>
 
+                <!-- Column Title -->
+                {% if child.title != blank %}
+                <h4>{{ child.title }}</h4>
+                {% endif %}
+
+                <!-- Submenu -->
                 <ul>
                   {% for sublink in child.links %}
+                  {% if sublink.title != blank %}
                   <li>
                     <a href="{{ sublink.url }}">{{ sublink.title }}</a>
                   </li>
+                  {% endif %}
                   {% endfor %}
                 </ul>
+
               </div>
+              {% endif %}
               {% endfor %}
 
+              <!-- Image -->
               {% if section.settings.submenu_image != blank %}
               <div class="dropdown-image">
                 {{ section.settings.submenu_image | image_url: width: 300 | image_tag }}
@@ -39,6 +53,7 @@
           {% endif %}
 
         </li>
+        {% endif %}
         {% endfor %}
 
       </ul>
