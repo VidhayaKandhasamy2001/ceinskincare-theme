@@ -56,39 +56,14 @@
       }
     },
     "header_cein_menu_WWxcaz": {
-      "type": "header-cein-menu",
-      "blocks": {
-        "menu_item_wJ9iqB": {
-          "type": "menu_item",
-          "settings": {
-            "menu_title": "",
-            "menu_link": "",
-            "show_dropdown": true,
-            "submenu_title": "",
-            "submenu_menu": ""
-          }
-        },
-        "menu_item_qLQeK6": {
-          "type": "menu_item",
-          "settings": {
-            "menu_title": "",
-            "menu_link": "",
-            "show_dropdown": true,
-            "submenu_title": "",
-            "submenu_menu": ""
-          }
-        }
-      },
-      "block_order": [
-        "menu_item_wJ9iqB",
-        "menu_item_qLQeK6"
-      ],
+      "type": "cein-header",
       "name": "CEIN Header Menu",
       "settings": {
         "logo_image": "shopify://shop_images/Logo.png",
         "wishlist_count": "0",
         "cart_count": "0",
-        "language_selector": "en"
+        "language_selector": "en",
+        "menu":"cein-header"
       }
     }
   },
