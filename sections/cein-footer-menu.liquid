@@ -1,0 +1,104 @@
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Brand / Left Section -->
+    <section class="footer-brand">
+      <div class="footer-logo">
+        {{ section.settings.footer_logo | image_url: 'master' | image_tag }}
+      </div>
+      <div class="footer-social">
+        <p>{{ section.settings.social_heading }}</p>
+        <nav class="social-nav" aria-label="Social media">
+          <ul class="social-icons">
+            {% for block in section.blocks %}
+              <li>
+                <a href="{{ block.settings.social_link }}" class="icon {{ block.settings.social_name | downcase }}">{{ block.settings.social_name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </section>
+    <!-- Footer Navigation Columns -->
+    <nav class="footer-links" aria-label="Footer">
+        {% for link in section.settings.footer_menu.links %}
+      <section class="footer-column">
+        <h3>{{ link.title }}</h3>
+        {% for sublink in link.links %}
+        <ul>
+          <li><a href="{{ sublink.url }}">{{ sublink.title }}</a></li>
+        </ul>
+        {% endfor %}
+      </section>
+        {% endfor %}
+    </nav>
+  </div>
+  <!-- Bottom Section -->
+  <div class="footer-bottom">
+    <small>{{ section.settings.copyright_text }}</small>
+    <nav class="footer-bottom-links" aria-label="Legal">
+        {% for link in section.settings.footer_menu_2.links %}
+      <ul>
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      </ul>
+        {% endfor %}
+    </nav>
+  </div>
+</footer>
+{% schema %}
+{
+  "name": "Cein Footer Menu",
+  "class": "cein-footer-menu",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Footer Menu"
+    },
+    {
+        "type": "link_list",
+        "id": "footer_menu_2",
+        "label": "Footer bottom menu"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "text",
+      "id": "social_heading",
+      "label": "Social Heading"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "© 2024 CEIN Skincare. All rights reserved."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "social",
+      "name": "Social Media",
+      "settings": [
+        {
+          "type": "text",
+          "id": "social_name",
+          "label": "Social Media Name"
+        },
+        {
+          "type": "url",
+          "id": "social_link",
+          "label": "Social Media Link"
+        }
+      ]
+    }
+  ],
+    "presets": [
+        {
+        "name": "CEIN Footer",
+        "category": "Footer"
+        }
+    ]
+}
+{% endschema %}
