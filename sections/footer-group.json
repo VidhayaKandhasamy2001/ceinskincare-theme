@@ -16,7 +16,7 @@
       "name": "CEIN Footer",
       "settings": {
         "footer_menu": "cein-footer-menu",
-        "footer_menu_2": "",
+        "footer_menu_2": "cein-footer-bottom-menu",
         "footer_logo": "shopify://shop_images/Logo.png",
         "social_heading": "Follow Us",
         "copyright_text": "© 2024 CEIN Skincare. All rights reserved."
