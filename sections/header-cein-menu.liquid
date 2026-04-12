@@ -1,63 +1,77 @@
 <header class="site-header">
   <div class="header-container">
+
     <!-- Left Navigation -->
     <nav class="main-nav">
       <ul class="nav-list">
+
         {% for link in section.settings.menu.links %}
-          {{ link.title }}
-        <li class="nav-item has-dropdown">
+        <li class="nav-item {% if link.links != blank %}has-dropdown{% endif %}">
+          
           <a href="{{ link.url }}">{{ link.title }}</a>
+
+          {% if link.links != blank %}
           <div class="dropdown-menu">
             <div class="dropdown-container">
+
+              {% for child in link.links %}
               <div class="dropdown-column">
-                <h4>Submenu Title</h4>
+                <h4>{{ child.title }}</h4>
+
                 <ul>
-                  {% for sublink in link.links %}
-                  <li><a href="{{ sublink.url }}">{{ sublink.title }}</a></li>
+                  {% for sublink in child.links %}
+                  <li>
+                    <a href="{{ sublink.url }}">{{ sublink.title }}</a>
+                  </li>
                   {% endfor %}
                 </ul>
               </div>
+              {% endfor %}
 
+              {% if section.settings.submenu_image != blank %}
               <div class="dropdown-image">
-               {{ section.settings.submenu_image | image_url: 'medium' | image_tag}}
+                {{ section.settings.submenu_image | image_url: width: 300 | image_tag }}
               </div>
+              {% endif %}
+
             </div>
           </div>
+          {% endif %}
+
         </li>
         {% endfor %}
-        <li class="nav-item">
-          <a href="#">Menu</a>
-        </li>
 
-        <li class="nav-item">
-          <a href="#">Menu</a>
-        </li>
       </ul>
     </nav>
 
     <!-- Logo -->
     <div class="logo">
+      {% if section.settings.logo_image != blank %}
       <a href="{{ routes.root_url }}">
-        {{ section.settings.logo_image | image_url: 'medium' | image_tag }}
+        {{ section.settings.logo_image | image_url: width: 120 | image_tag }}
       </a>
+      {% endif %}
     </div>
 
     <!-- Right Icons -->
     <div class="header-actions">
       <a href="#" class="icon search"></a>
 
-      <a href="#" class="lang">EN</a>
+      <a href="#" class="lang">
+        {{ section.settings.language_selector | upcase }}
+      </a>
 
       <a href="#" class="icon wishlist">
-        <span>0</span>
+        <span>{{ section.settings.wishlist_count }}</span>
       </a>
 
       <a href="#" class="icon account"></a>
 
       <a href="#" class="icon cart">
-        <span>0</span>
+        <span>{{ section.settings.cart_count }}</span>
       </a>
     </div>
+
   </div>
 </header>
 
@@ -67,9 +81,19 @@
   "class": "header-cein-menu",
   "settings": [
     {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main Menu"
+    },
+    {
       "type": "image_picker",
       "id": "logo_image",
       "label": "Logo Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "submenu_image",
+      "label": "Dropdown Image"
     },
     {
       "type": "text",
@@ -93,16 +117,6 @@
         { "value": "es", "label": "Spanish" }
       ],
       "default": "en"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Select Submenu"
-    },
-    {
-      "type": "image_picker",
-      "id": "submenu_image",
-      "label": "Dropdown Image"
     }
   ],
   "presets": [
