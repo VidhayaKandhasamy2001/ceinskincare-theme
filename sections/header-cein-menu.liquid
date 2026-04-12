@@ -1,71 +1,62 @@
 <header class="site-header">
   <div class="header-container">
+    <!-- Left Navigation -->
     <nav class="main-nav">
       <ul class="nav-list">
-        {% for block in section.blocks %}
-        <li class="nav-item"{% if block.settings.show_dropdown %}has-dropdown{% endif %}>
-          <a href="{{ block.settings.menu_link }}">
-            {{ block.settings.menu_title }}
-          </a>
-          {% if block.settings.show_dropdown %}
+        {% for link in section.settings.menu.links %}
+        <li class="nav-item has-dropdown">
+          <a href="{{ link.url }}">{{ link.title }}</a>
           <div class="dropdown-menu">
             <div class="dropdown-container">
-              {% assign menu = block.settings.submenu_menu %}
               <div class="dropdown-column">
-                <h4>{{ block.settings.submenu_title }}</h4>
+                <h4>Submenu Title</h4>
                 <ul>
-                  {% for link in menu.links %}
-                    <li>
-                      <a href="{{ link.url }}">{{ link.title }}</a>
-                    </li>
+                  {% for sublink in link.links %}
+                  <li><a href="{{ sublink.url }}">{{ sublink.title }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
 
-              {% if block.settings.submenu_image != blank %}
               <div class="dropdown-image">
-                {{ block.settings.submenu_image | image_url:width: 100, height: 100 | image_tag }}
+               {{ section.settings.submenu_image | image_url: 'medium' | image_tag}}
               </div>
-              {% endif %}
-
             </div>
           </div>
-          {% endif %}
-
         </li>
         {% endfor %}
+        <li class="nav-item">
+          <a href="#">Menu</a>
+        </li>
 
+        <li class="nav-item">
+          <a href="#">Menu</a>
+        </li>
       </ul>
     </nav>
 
     <!-- Logo -->
     <div class="logo">
-      {% if section.settings.logo_image != blank %}
-        <a href="/">
-          {{ section.settings.logo_image | image_url:width: 100, height: 100 | image_tag }}
-        </a>
-      {% endif %}
+      <a href="{{ routes.root_url }}">
+        {{ section.settings.logo_image | image_url: 'medium' | image_tag }}
+      </a>
     </div>
 
     <!-- Right Icons -->
     <div class="header-actions">
       <a href="#" class="icon search"></a>
 
-      <a href="#" class="lang">
-        {{ section.settings.language_selector | upcase }}
-      </a>
+      <a href="#" class="lang">EN</a>
 
       <a href="#" class="icon wishlist">
-        <span>{{ section.settings.wishlist_count }}</span>
+        <span>0</span>
       </a>
 
       <a href="#" class="icon account"></a>
 
       <a href="#" class="icon cart">
-        <span>{{ section.settings.cart_count }}</span>
+        <span>0</span>
       </a>
     </div>
-
   </div>
 </header>
 
@@ -101,58 +92,21 @@
         { "value": "es", "label": "Spanish" }
       ],
       "default": "en"
-    }
-  ],
-  "blocks": [
+    },
     {
-      "type": "menu_item",
-      "name": "Menu Item",
-      "settings": [
-        {
-          "type": "text",
-          "id": "menu_title",
-          "label": "Menu Title"
-        },
-        {
-          "type": "url",
-          "id": "menu_link",
-          "label": "Menu Link"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_dropdown",
-          "label": "Enable Dropdown",
-          "default": true
-        },
-        {
-          "type": "text",
-          "id": "submenu_title",
-          "label": "Submenu Title"
-        },
-        {
-          "type": "link_list",
-          "id": "submenu_menu",
-          "label": "Select Submenu"
-        },
-        {
-          "type": "image_picker",
-          "id": "submenu_image",
-          "label": "Dropdown Image"
-        }
-      ]
+      "type": "link_list",
+      "id": "menu",
+      "label": "Select Submenu"
+    },
+    {
+      "type": "image_picker",
+      "id": "submenu_image",
+      "label": "Dropdown Image"
     }
   ],
   "presets": [
     {
-      "name": "CEIN Header Menu",
-      "blocks": [
-        {
-          "type": "menu_item"
-        },
-        {
-          "type": "menu_item"
-        }
-      ]
+      "name": "CEIN Header Menu"
     }
   ]
 }
