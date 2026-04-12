@@ -3,7 +3,7 @@
     <nav class="main-nav">
       <ul class="nav-list">
         {% for block in section.blocks %}
-        <li class="nav-item ">
+        <li class="nav-item"{% if block.settings.show_dropdown %}has-dropdown{% endif %}>
           <a href="{{ block.settings.menu_link }}">
             {{ block.settings.menu_title }}
           </a>
