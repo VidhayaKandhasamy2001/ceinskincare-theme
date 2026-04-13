@@ -25,6 +25,7 @@
       "block_order": [
         "announcement-bar-0"
       ],
+      "disabled": true,
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -55,19 +56,27 @@
         "padding_bottom": 20
       }
     },
-  "header_cein_menu_WWxcaz": {
-    "type": "cein-header",
-    "name": "CEIN Header Menu",
-    "settings": {
-      "logo_image": "shopify://shop_images/Logo.png",
-      "wishlist_count": "0",
-      "cart_count": "0",
-      "language_selector": "en",
-      "menu": "cein-header"
+    "header_cein_menu_WWxcaz": {
+      "type": "cein-header",
+      "name": "CEIN Header Menu",
+      "settings": {
+        "menu": "cein-header",
+        "logo_image": "shopify://shop_images/Logo.png",
+        "wishlist_count": "0"
+      }
+    },
+    "cein_announcement_bar_tWAK7d": {
+      "type": "cein-announcement-bar",
+      "name": "CEIN Announcement Bar",
+      "settings": {
+        "announcement_text": "Welcome to our store! Enjoy free shipping on orders over $50.",
+        "bg_color": "#000000",
+        "text_color": "#ffffff"
+      }
     }
-  }
-},
+  },
   "order": [
+    "cein_announcement_bar_tWAK7d",
     "announcement-bar",
     "header",
     "header_cein_menu_WWxcaz"
