@@ -57,40 +57,33 @@
           </svg>
         </button>
       </div>
-<nav class="header-actions" aria-label="Customer actions">
-  <ul class="header-actions__list">
+      <nav class="header-actions" aria-label="Customer actions">
+        <ul class="header-actions__list">
+          <!-- PROFILE -->
+          <li class="header-actions__item">
+            <a href="{{ routes.account_url }}" class="icon" aria-label="Account">
+              <span class="profile-icon"></span>
+            </a>
+          </li>
 
-    {% assign links = section.settings.account_menu.links %}
+          <!-- ORDERS -->
+          <li class="header-actions__item">
+            <a href="{{ routes.account_url }}/orders" class="icon" aria-label="Order History">
+              <span class="order-icon"></span>
+            </a>
+          </li>
 
-    <!-- PROFILE -->
-    {% if links.size > 0 %}
-      <li class="header-actions__item">
-        <a href="{{ links[0].url }}" class="icon" aria-label="Account">
-          <span class="profile-icon"></span>
-        </a>
-      </li>
-    {% endif %}
-
-    <!-- ORDERS -->
-    {% if links.size > 1 %}
-      <li class="header-actions__item">
-        <a href="{{ links[1].url }}" class="icon" aria-label="Order History">
-          <span class="order-icon"></span>
-        </a>
-      </li>
-    {% endif %}
-
-    <!-- WISHLIST -->
-    {% if links.size > 2 %}
-      <li class="header-actions__item">
-        <a href="{{ links[2].url }}" class="icon" aria-label="Wishlist">
-          <span class="count">{{ section.settings.wishlist_count }}</span>
-        </a>
-      </li>
-    {% endif %}
-
-  </ul>
-</nav>
+          <!-- WISHLIST -->
+          {% assign links = section.settings.account_menu.links %}
+          {% if links.size > 2 %}
+            <li class="header-actions__item">
+              <a href="{{ links[2].url }}" class="icon" aria-label="Wishlist">
+                <span class="count">{{ section.settings.wishlist_count }}</span>
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
     </div>
   </div>
 </header>
@@ -137,7 +130,7 @@
     {
       "name": "CEIN Header Menu",
       "category": "Header"
-    }
+    } 
   ]
 }
 {% endschema %}
