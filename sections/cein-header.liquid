@@ -1,3 +1,4 @@
+{{ 'cein-header-menu.css' | asset_url | stylesheet_tag }}
 <header class="site-header">
   <div class="header-container">
     <!-- LEFT: MAIN MENU -->
@@ -6,7 +7,6 @@
         {% for link in section.settings.menu.links %}
           <li class="nav-item {% if link.links != blank %}has-dropdown{% endif %}">
             <a href="{{ link.url }}">{{ link.title }}</a>
-
             {% if link.links != blank %}
               <div class="dropdown-menu">
                 <div class="dropdown-container">
