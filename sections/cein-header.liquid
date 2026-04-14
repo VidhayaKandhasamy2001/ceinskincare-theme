@@ -60,7 +60,9 @@
       <nav class="header-actions" aria-label="Customer actions">
         <ul class="header-actions__list">
           {% for link in section.settings.account_menu.links %}
-            {% if link.title contains 'Wishlist' %}
+            {% assign title = link.title | downcase %}
+
+            {% if title contains 'wishlist' %}
               <li class="header-actions__item">
                 <a href="{{ link.url }}" class="icon" aria-label="Wishlist">
                   {{ link.title }}
@@ -68,8 +70,6 @@
                 </a>
               </li>
             {% endif %}
-
-            {% assign title = link.title | downcase %}
 
             {% if title contains 'profile' %}
               <li class="header-actions__item">
