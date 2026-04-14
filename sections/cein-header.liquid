@@ -57,40 +57,38 @@
           </svg>
         </button>
       </div>
-<nav class="header-actions" aria-label="Customer actions">
-  <ul class="header-actions__list">
+      <nav class="header-actions" aria-label="Customer actions">
+        <ul class="header-actions__list">
+          {% for link in section.settings.account_menu.links %}
+            {% if link.title contains 'Wishlist' %}
+              <li class="header-actions__item">
+                <a href="{{ link.url }}" class="icon" aria-label="Wishlist">
+                  {{ link.title }}
+                  <span class="count">{{ section.settings.wishlist_count }}</span>
+                </a>
+              </li>
+            {% endif %}
 
-    {% for link in section.settings.account_menu.links %}
+            {% assign title = link.title | downcase %}
 
-      {% if link.title contains 'Wishlist' %}
-        <li class="header-actions__item">
-          <a href="{{ link.url }}" class="icon" aria-label="Wishlist">
-            {{ link.title }}
-            <span class="count">{{ section.settings.wishlist_count }}</span>
-          </a>
-        </li>
-      {% endif %}
+            {% if title contains 'profile' %}
+              <li class="header-actions__item">
+                <a href="{{ link.url }}" class="icon" aria-label="Account">
+                  <span class="profile-icon"></span>
+                </a>
+              </li>
+            {% endif %}
 
-      {% if link.title contains 'Profile' and customer %}
-        <li class="header-actions__item">
-          <a href="{{ link.url }}" class="icon" aria-label="Account">
-            <span class="profile-icon"></span>
-          </a>
-        </li>
-      {% endif %}
-
-      {% if link.title contains 'Orders' %}
-        <li class="header-actions__item">
-          <a href="{{ link.url }}" class="icon" aria-label="Order History">
-            <span class="order-icon"></span>
-          </a>
-        </li>
-      {% endif %}
-
-    {% endfor %}
-
-  </ul>
-</nav>
+            {% if title contains 'orders' %}
+              <li class="header-actions__item">
+                <a href="{{ link.url }}" class="icon" aria-label="Order History">
+                  <span class="order-icon"></span>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
     </div>
   </div>
 </header>
