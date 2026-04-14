@@ -1,33 +1,37 @@
-.site-header .header-container{
+.site-header .header-container {
     padding: 22px 32px;
-     display: flex;
-   flex-direction: row;
-   justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     min-height: 80px;
     align-items: center;
 
 }
+
 .dropdown-menu {
-     position: relative;
-     display: inline-block;
+    position: relative;
+    display: inline-block;
     display: none;
 }
-.header-container .main-nav .nav-list{
+
+.header-container .main-nav .nav-list {
     display: flex;
     flex-direction: row;
     gap: 22px;
     padding: 0;
     margin: 0;
 }
-.header-container .main-nav .nav-list .nav-item{
-   list-style-type: none;
-       text-decoration: none;
+
+.header-container .main-nav .nav-list .nav-item {
+    list-style-type: none;
+    text-decoration: none;
     color: #333333;
     font-size: 14px;
     line-height: 23.8px;
     letter-spacing: -1%;
 }
-.header-container .main-nav .nav-list .nav-item a{
+
+.header-container .main-nav .nav-list .nav-item a {
     text-decoration: none;
     color: #333333;
     font-size: 14px;
@@ -36,13 +40,14 @@
 }
 
 /* right header */
-.header-right{
+.header-right {
     display: flex;
     flex-direction: row;
     gap: 28px;
     align-items: center;
 }
-.header-right .header-actions .header-actions__list{
+
+.header-right .header-actions .header-actions__list {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -51,12 +56,14 @@
     margin: 0;
     list-style-type: none;
 }
-.header-search button{
+
+.header-search button {
     background: none;
     border: none;
     cursor: pointer;
 }
-.header-actions__list .header-actions__item .icon{
+
+.header-actions__list .header-actions__item .icon {
     text-decoration: none;
     color: #333333;
     font-size: 14px;
@@ -67,7 +74,7 @@
     align-items: center;
 }
 
-.header-actions__list .header-actions__item .count{
+.header-actions__list .header-actions__item .count {
     text-decoration: none;
     color: #333333;
     font-size: 12px;
