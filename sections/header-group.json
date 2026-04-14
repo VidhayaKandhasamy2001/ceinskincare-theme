@@ -15,7 +15,7 @@
       "type": "cein-announcement-bar",
       "name": "CEIN Announcement Bar",
       "settings": {
-        "announcement_text": "Welcome to our store! Enjoy free shipping on orders over $50.",
+        "announcement_text": "Click and Collect is now available. Complimentary shipping over $400.",
         "bg_color": "#000000",
         "text_color": "#ffffff"
       }
