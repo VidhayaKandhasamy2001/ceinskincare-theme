@@ -1,0 +1,39 @@
+{{ 'announcement.css' | asset_url | stylesheet_tag }}
+<div class="announcement-bar" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};">
+  <div class="announcement-bar__container">
+    <p class="announcement-bar__text">
+      {{ section.settings.announcement_text }}
+    </p>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "CEIN Announcement Bar",
+  "class": "cein-announcement-bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "Welcome to our store! Enjoy free shipping on orders over $50."
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    }
+  ],
+    "presets": [
+        {
+        "name": "CEIN Announcement Bar"
+        }
+    ]
+}
+{% endschema %}

@@ -1,1 +1,76 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"footer":{"type":"footer","settings":{"color_scheme":"scheme-1","newsletter_enable":true,"newsletter_heading":"Subscribe to our emails","enable_follow_on_shop":true,"show_social":true,"enable_country_selector":true,"enable_language_selector":true,"payment_enable":true,"show_policy":true,"margin_top":0,"padding_top":36,"padding_bottom":36}}},"order":["footer"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "cein_footer_menu_RG4fBK": {
+      "type": "cein-footer-menu",
+      "blocks": {
+        "social_PjBwBd": {
+          "type": "social",
+          "settings": {
+            "social_name": "Facebook",
+            "social_link": "https://www.facebook.com/"
+          }
+        },
+        "social_hdiwFk": {
+          "type": "social",
+          "settings": {
+            "social_name": "Instagram",
+            "social_link": "https://www.instagram.com/accounts/login/?hl=en"
+          }
+        },
+        "social_dNn7hk": {
+          "type": "social",
+          "settings": {
+            "social_name": "Twitter",
+            "social_link": "https://x.com/login?redirect_after_login=https%3A%2F%2Fhelp.x.com%2Fen"
+          }
+        }
+      },
+      "block_order": [
+        "social_PjBwBd",
+        "social_hdiwFk",
+        "social_dNn7hk"
+      ],
+      "name": "CEIN Footer",
+      "settings": {
+        "footer_menu": "cein-footer-menu",
+        "footer_menu_2": "cein-footer-bottom-menu",
+        "footer_logo": "shopify://shop_images/Logo.png",
+        "social_heading": "Follow Us",
+        "copyright_text": "© 2024 CEIN Skincare. All rights reserved."
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "cein_footer_menu_RG4fBK",
+    "footer"
+  ]
+}
