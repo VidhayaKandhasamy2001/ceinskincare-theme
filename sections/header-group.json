@@ -47,6 +47,7 @@
         "menu": "cein-header",
         "account_menu": "customer-account-main-menu",
         "logo_image": "shopify://shop_images/Logo.png",
+        "submenu_image": "shopify://shop_images/Menu_dropdown-_desktop.png",
         "wishlist_count": "0",
         "search_label": "Search"
       }
