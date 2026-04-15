@@ -24,12 +24,13 @@
                       {% endif %}
                     </div>
                   {% endfor %}
-
-                  {% if section.settings.submenu_image != blank %}
+                  {% assign header_data = shop.metafields.header_image.values | first %}
                     <div class="dropdown-image">
-                      {{ section.settings.submenu_image | image_url: width: 300 | image_tag }}
+                      {% if header_data != blank %}
+                        {{ header_data.image | image_url: width: 300 | image_tag : alt: header_data.alt }}
+
+                      {% endif %}
                     </div>
-                  {% endif %}
                 </div>
               </div>
             {% endif %}
