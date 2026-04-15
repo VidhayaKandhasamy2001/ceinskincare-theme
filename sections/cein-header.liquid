@@ -24,7 +24,8 @@
                       {% endif %}
                     </div>
                   {% endfor %}
-                  {% assign header_data = shop.metaobjects.header_image['main-header'] %}
+                  {% assign header_data = shop.metaobjects.header_image.values.first %}
+
                   <div class="dropdown-image">
                     {% if header_data %}
                       {{
