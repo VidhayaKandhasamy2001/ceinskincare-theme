@@ -24,16 +24,14 @@
                       {% endif %}
                     </div>
                   {% endfor %}
-                  {% assign header_data = shop.metaobjects.header_image.values.first %}
-
+                  {% assign header_data = shop.metaobjects.header_image.values | first %}
                   <div class="dropdown-image">
-                    {% if header_data %}
-                      {{
-                        header_data.product_image
-                        | image_url: width: 300
-                        | image_tag: alt: header_data.alt_text
-                        | default: 'Header Image'
-                      }}
+                    {% if header_data != blank %}
+                      {% assign image = header_data.product_image.value %}
+                      {% assign alt_text = header_data.alt_text | default: 'Header Image' %}
+                      {% if image != blank %}
+                        {{ image | image_url: width: 300 | image_tag: alt: alt_text }}
+                      {% endif %}
                     {% endif %}
                   </div>
                 </div>
