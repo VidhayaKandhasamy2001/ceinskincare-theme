@@ -24,11 +24,11 @@
                       {% endif %}
                     </div>
                   {% endfor %}
-                  {% assign header_data = shop.metafields.header_image.values | first %}
+                  {% assign header_data = shop.metaobjects.header_image.values | first %}
+                  {{ header_data | json }}
                     <div class="dropdown-image">
                       {% if header_data != blank %}
                         {{ header_data.image | image_url: width: 300 | image_tag : alt: header_data.alt }}
-
                       {% endif %}
                     </div>
                 </div>
