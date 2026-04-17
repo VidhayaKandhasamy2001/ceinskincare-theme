@@ -1,58 +1,44 @@
-/* =========================
-   HEADER BASE
-========================= */
+   /* HEADER BASE */
 .site-header {
     border-bottom: 1px solid #e5e5e5;
     background: #fff;
     position: relative;
 }
-
 .header-container {
-    padding: 22px 32px;
+    padding: 0px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-/* =========================
-   LEFT NAVIGATION
-========================= */
+   /* LEFT NAVIGATION */
 .main-nav .nav-list {
     display: flex;
     gap: 28px;
     margin: 0;
     padding: 0;
 }
-
 .nav-item {
     list-style: none;
     position: relative;
 }
-
 .nav-item__label a {
     text-decoration: none;
     color: #111;
     font-size: 14px;
+    padding: 22px 0;
 }
-
-/* =========================
-   CENTER LOGO
-========================= */
+   /* CENTER LOGO */
 .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
 }
-
-/* =========================
-   RIGHT HEADER
-========================= */
+   /* RIGHT HEADER */
 .header-right {
     display: flex;
     align-items: center;
     gap: 28px;
 }
-
 .header-actions__list {
     display: flex;
     gap: 24px;
@@ -60,7 +46,6 @@
     padding: 0;
     list-style: none;
 }
-
 .header-actions__item .icon {
     display: flex;
     align-items: center;
@@ -68,111 +53,86 @@
     text-decoration: none;
     color: #111;
 }
-
 .count {
     font-size: 12px;
 }
-
-/* =========================
-   MEGA DROPDOWN
-========================= */
-
-/* IMPORTANT for full width */
+   /* MEGA DROPDOWN */
 .has-dropdown {
     position: static;
 }
-
 .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     background: #fcfffc;
-    padding: 0px 32px;
-    border-top: 1px solid #e5e5e5;
+    padding: 0px 0px 0px 32px;
+    border-top: 2px solid #929492;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
     z-index: 999;
 }
+.has-dropdown:hover{
+    border-bottom: 3px solid #000;
 
-/* SHOW ON HOVER */
+}
 .has-dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
 }
-
-/* =========================
-   DROPDOWN CONTENT LAYOUT
-========================= */
+   /* DROPDOWN CONTENT LAYOUT */
 .dropdown-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
-
-/* =========================
-   COLUMNS
-========================= */
+   /* COLUMNS */
 .dropdown-column {
     min-width: 180px;
     padding: 70px 0;
 }
-
 .dropdown-column h4 {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 20px;
     color: #111;
 }
-
 .dropdown-column ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
-
 .dropdown-column ul li {
     margin-bottom: 12px;
 }
-
 .dropdown-column ul li a {
     text-decoration: none;
     color: #555;
     font-size: 14px;
     transition: 0.2s;
 }
-
 .dropdown-column ul li a:hover {
     color: #000;
 }
-
-/* =========================
-   RIGHT IMAGE
-========================= */
+   /* RIGHT IMAGE */
 .dropdown-image {
-    width: 500px;
-    height: 500px;
+    width: 350px;
+    height: 600px;
     margin-left: 60px;
 }
-
 .dropdown-image img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
-
-/* =========================
-   SEARCH BUTTON
-========================= */
+   /* SEARCH BUTTON */
 .header-search button {
     background: none;
     border: none;
     cursor: pointer;
 }
-
-/* =========================
-   FIX COMMON ISSUES
-========================= */
+   /* FIX COMMON ISSUES */
 .header-container {
     position: static;
     overflow: visible;
