@@ -1,83 +1,179 @@
-.site-header .header-container {
+/* =========================
+   HEADER BASE
+========================= */
+.site-header {
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+    position: relative;
+}
+
+.header-container {
     padding: 22px 32px;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    min-height: 80px;
     align-items: center;
+}
 
+/* =========================
+   LEFT NAVIGATION
+========================= */
+.main-nav .nav-list {
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    list-style: none;
+    position: relative;
+}
+
+.nav-item__label a {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+}
+
+/* =========================
+   CENTER LOGO
+========================= */
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* =========================
+   RIGHT HEADER
+========================= */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.header-actions__list {
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header-actions__item .icon {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #111;
+}
+
+.count {
+    font-size: 12px;
+}
+
+/* =========================
+   MEGA DROPDOWN
+========================= */
+
+/* IMPORTANT for full width */
+.has-dropdown {
+    position: static;
 }
 
 .dropdown-menu {
-    position: relative;
-    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fcfffc;
+    padding: 0px 32px;
+    border-top: 1px solid #e5e5e5;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
 }
 
-.header-container .main-nav .nav-list {
+/* SHOW ON HOVER */
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   DROPDOWN CONTENT LAYOUT
+========================= */
+.dropdown-container {
     display: flex;
-    flex-direction: row;
-    gap: 22px;
-    padding: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* =========================
+   COLUMNS
+========================= */
+.dropdown-column {
+    min-width: 180px;
+    padding: 70px 0;
+}
+
+.dropdown-column h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.dropdown-column ul {
+    list-style: none;
     margin: 0;
-}
-
-.header-container .main-nav .nav-list .nav-item {
-    list-style-type: none;
-    text-decoration: none;
-    color: #333333;
-    font-size: 14px;
-    line-height: 23.8px;
-    letter-spacing: -1%;
-}
-
-.header-container .main-nav .nav-list .nav-item a {
-    text-decoration: none;
-    color: #333333;
-    font-size: 14px;
-    line-height: 23.8px;
-    letter-spacing: -1%;
-}
-
-/* right header */
-.header-right {
-    display: flex;
-    flex-direction: row;
-    gap: 28px;
-    align-items: center;
-}
-
-.header-right .header-actions .header-actions__list {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 28px;
     padding: 0;
-    margin: 0;
-    list-style-type: none;
 }
 
+.dropdown-column ul li {
+    margin-bottom: 12px;
+}
+
+.dropdown-column ul li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.dropdown-column ul li a:hover {
+    color: #000;
+}
+
+/* =========================
+   RIGHT IMAGE
+========================= */
+.dropdown-image {
+    width: 500px;
+    height: 500px;
+    margin-left: 60px;
+}
+
+.dropdown-image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   SEARCH BUTTON
+========================= */
 .header-search button {
     background: none;
     border: none;
     cursor: pointer;
 }
 
-.header-actions__list .header-actions__item .icon {
-    text-decoration: none;
-    color: #333333;
-    font-size: 14px;
-    line-height: 14px;
-    letter-spacing: -1%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.header-actions__list .header-actions__item .count {
-    text-decoration: none;
-    color: #333333;
-    font-size: 12px;
-    line-height: 12px;
-    letter-spacing: -1%;
-    padding: 5px;
+/* =========================
+   FIX COMMON ISSUES
+========================= */
+.header-container {
+    position: static;
+    overflow: visible;
 }

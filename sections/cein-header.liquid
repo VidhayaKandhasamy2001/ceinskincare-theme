@@ -6,7 +6,9 @@
       <ul class="nav-list">
         {% for link in section.settings.menu.links %}
           <li class="nav-item {% if link.links != blank %}has-dropdown{% endif %}">
-            <a href="{{ link.url }}">{{ link.title }}</a>
+            <div class="nav-item__label">
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </div>
             {% if link.links != blank %}
               <div class="dropdown-menu">
                 <div class="dropdown-container">
@@ -30,7 +32,7 @@
                       {% assign image = header_data.product_image.value %}
                       {% assign alt_text = header_data.alt_text | default: 'Header Image' %}
                       {% if image != blank %}
-                        {{ image | image_url: width: 300 | image_tag: alt: alt_text }}
+                        {{ image | image_url: width: 300  | image_tag: alt: alt_text }}
                       {% endif %}
                     {% endif %}
                   </div>
