@@ -1,7 +1,6 @@
    /* HEADER BASE */
 .site-header {
     border-bottom: 1px solid #e5e5e5;
-    background: #fff;
     position: relative;
 }
 .header-container {
@@ -20,6 +19,12 @@
 .nav-item {
     list-style: none;
     position: relative;
+}
+.nav-item__label {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    padding: 22px 0;
 }
 .nav-item__label a {
     text-decoration: none;
